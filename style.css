@@ -1,12 +1,19 @@
 #container{
-    height: 2000px;
+    height: 1050px;
 }
-#search-bar{
+#navbar{
     width: 80%;
+    margin: 0 auto;
     border: solid 1px #000000;
     border-radius: 5px;
-    margin: 0 auto;
-    padding: 1rem
+    padding: 1rem;
+    display:flex;
+    align-items: center
+}
+#search-bar{
+    border: solid 1px #000000;
+    border-radius: 5px;
+    width:80%;
 }
 #weather-conditions{
     width: 80%;
