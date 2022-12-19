@@ -13,13 +13,18 @@
   <body>
     <div id="container">
       <div id="navbar">
+        <div id="logo">Logo</div>
         <div id="search-bar">
           <input type="text" placeholder="search..." />
           <button><ion-icon name="search-outline"></ion-icon></button>
         </div>
         <div id="toggle-button">
-          <button><ion-icon name="menu-outline"></ion-icon></button>
+          <a href="javascript:void(0);" class="icon" onclick="hamburgerMenu()"><ion-icon name="menu-outline"></ion-icon></a>
         </div>
+      </div>
+      <div id="myLinks">
+        <button onclick="detailToggle()">Dettagli meteo</button>
+        <button onclick="forecastToggle()">Forecast</button>
       </div>
       <div id="weather-conditions">
         <div id="left-hand">
