@@ -43,7 +43,6 @@ let weather = {
     const { temp, temp_min, temp_max, humidity, pressure } = data.main;
     const { speed } = data.wind;
     const { country, sunrise, sunset } = data.sys;
-    console.log(name, lon, lat, icon, description, temp, temp_min, temp_max, humidity, pressure, speed, country, sunrise, sunset, visibility);
     document.querySelector(".city").innerText = name;
     document.querySelector("#icon").src = "http://openweathermap.org/img/wn/" + icon + ".png";
     document.querySelector(".weather-conditions").innerHTML = description;
@@ -54,5 +53,17 @@ let weather = {
     document.querySelector(".pressure").innerHTML = pressure + " mb";
     document.querySelector(".visibility").innerHTML = visibility + " m";
     document.querySelector(".lon-lat").innerHTML = lon + "/" + lat;
+  },
+};
+
+let forecastWeater = {
+  apiKey: "b3986ed7dbefd400d6ae3068ccccdc5d",
+  fetchForecastWeater: function (city) {
+    fetch("http://api.openweathermap.org/data/2.5/forecast?q=" + city + "&units=metric" + this.apiKey + "&lang=it")
+      .then((response) => response.json())
+      .then((data) => this.displayForecastWeater(data));
+  },
+  displayForecastWeater: function (data) {
+    console.log(data);
   },
 };
