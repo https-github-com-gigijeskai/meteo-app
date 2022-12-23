@@ -37,15 +37,22 @@ let weather = {
       .then((data) => this.displayWeather(data));
   },
   displayWeather: function (data) {
-    const { name } = data;
+    const { lon, lat } = data.coord;
+    const { name, visibility } = data;
     const { icon, description } = data.weather[0];
-    const { temp, temp_min, temp_max, humidity } = data.main;
+    const { temp, temp_min, temp_max, humidity, pressure } = data.main;
     const { speed } = data.wind;
     const { country, sunrise, sunset } = data.sys;
-    console.log(name, icon, description, temp, temp_min, temp_max, humidity, speed, country, sunrise, sunset);
-    document.querySelector(".city").innerText = "Meteo di" + " " + name;
-    document.querySelector(".icon").src = "https://openweathermap.org/img/wn/" + icon + ".png";
+    console.log(name, lon, lat, icon, description, temp, temp_min, temp_max, humidity, pressure, speed, country, sunrise, sunset, visibility);
+    document.querySelector(".city").innerText = name;
+    document.querySelector("#icon").src = "http://openweathermap.org/img/wn/" + icon + ".png";
     document.querySelector(".weather-conditions").innerHTML = description;
     document.querySelector(".temp").innerHTML = Math.round(temp) + "&#176 C";
+    document.querySelector(".temp-min-max").innerHTML = Math.round(temp_min) + "&#176 C" + " / " + Math.round(temp_max) + "&#176 C";
+    document.querySelector(".wind").innerHTML = Math.round(speed) + " Km/h";
+    document.querySelector(".humidity").innerHTML = humidity + " %";
+    document.querySelector(".pressure").innerHTML = pressure + " mb";
+    document.querySelector(".visibility").innerHTML = visibility + " m";
+    document.querySelector(".lon-lat").innerHTML = lon + "/" + lat;
   },
 };
