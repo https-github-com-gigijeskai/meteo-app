@@ -42,7 +42,6 @@ let weather = {
     const { icon, description } = data.weather[0];
     const { temp, temp_min, temp_max, humidity, pressure } = data.main;
     const { speed } = data.wind;
-    const { country, sunrise, sunset } = data.sys;
     document.querySelector(".city").innerText = name;
     document.querySelector("#icon").src = "http://openweathermap.org/img/wn/" + icon + ".png";
     document.querySelector(".weather-conditions").innerHTML = description;
@@ -59,11 +58,14 @@ let weather = {
 let forecastWeater = {
   apiKey: "b3986ed7dbefd400d6ae3068ccccdc5d",
   fetchForecastWeater: function (city) {
-    fetch("http://api.openweathermap.org/data/2.5/forecast?q=" + city + "&units=metric" + this.apiKey + "&lang=it")
+    fetch("http://api.openweathermap.org/data/2.5/forecast?q=" + city + "&units=metric&appid=" + this.apiKey + "&lang=it")
       .then((response) => response.json())
       .then((data) => this.displayForecastWeater(data));
   },
   displayForecastWeater: function (data) {
-    console.log(data);
+    const { dt_txt } = data.list[2];
+    console.log(data.list);
+    document.querySelector(".days:nth-child(2)").innerHTML = dt_txt;
   },
 };
+// sto implementando le previsioni dei prossimi giorni
