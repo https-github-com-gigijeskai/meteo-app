@@ -63,7 +63,8 @@ let forecastWeater = {
       .then((data) => this.displayForecastWeater(data));
   },
   displayForecastWeater: function (data) {
-    document.querySelector(".days:nth-child(1)").innerHTML = "Oggi";
+    document.querySelector(".days:nth-child(1)").innerHTML = "Oggi " + data.list[0].weather[0].description;
+
     const daysOfTheWeek = ["Domenica", "Lunedì", "Martedì", "Mercoledì", "Giovedì", "Venerdì", "Sabato", "Domenica", "Lunedì", "Martedì", "Mercoledì", "Giovedì", "Venerdì", "Sabato"];
     let date = new Date();
     const dayOfTheWeek = date.getDay();
