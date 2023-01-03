@@ -63,8 +63,19 @@ let forecastWeater = {
       .then((data) => this.displayForecastWeater(data));
   },
   displayForecastWeater: function (data) {
-    let { dt_txt } = data.list[0];
-    console.log(data.list);
-    document.querySelector(".days:nth-child(1)").innerHTML = dt_txt;
+    document.querySelector(".days:nth-child(1)").innerHTML = "Oggi";
+    const daysOfTheWeek = ["Domenica", "Lunedì", "Martedì", "Mercoledì", "Giovedì", "Venerdì", "Sabato", "Domenica", "Lunedì", "Martedì", "Mercoledì", "Giovedì", "Venerdì", "Sabato"];
+    let date = new Date();
+    const dayOfTheWeek = date.getDay();
+    const resultDay2 = daysOfTheWeek[dayOfTheWeek + 1];
+    document.querySelector(".days:nth-child(2)").innerHTML = resultDay2;
+    const resultDay3 = daysOfTheWeek[dayOfTheWeek + 2];
+    document.querySelector(".days:nth-child(3)").innerHTML = resultDay3;
+    const resultDay4 = daysOfTheWeek[dayOfTheWeek + 3];
+    document.querySelector(".days:nth-child(4)").innerHTML = resultDay4;
+    const resultDay5 = daysOfTheWeek[dayOfTheWeek + 4];
+    document.querySelector(".days:nth-child(5)").innerHTML = resultDay5;
+    const resultDay6 = daysOfTheWeek[dayOfTheWeek + 5];
+    document.querySelector(".days:nth-child(6)").innerHTML = resultDay6;
   },
 };
