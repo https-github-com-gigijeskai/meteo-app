@@ -63,9 +63,8 @@ let forecastWeater = {
       .then((data) => this.displayForecastWeater(data));
   },
   displayForecastWeater: function (data) {
-    const { dt_txt } = data.list[2];
+    let { dt_txt } = data.list[0];
     console.log(data.list);
-    document.querySelector(".days:nth-child(2)").innerHTML = dt_txt;
+    document.querySelector(".days:nth-child(1)").innerHTML = dt_txt;
   },
 };
-// sto implementando le previsioni dei prossimi giorni
