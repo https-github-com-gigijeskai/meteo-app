@@ -29,32 +29,6 @@ function forecastToggle() {
   }
 }
 
-// let weather = {
-//   apiKey: "b3986ed7dbefd400d6ae3068ccccdc5d",
-//   fetchWeather: function (city) {
-//     fetch("https://api.openweathermap.org/data/2.5/weather?q=" + city + "&units=metric&appid=" + this.apiKey + "&lang=it")
-//       .then((response) => response.json())
-//       .then((data) => this.displayWeather(data));
-//   },
-//   displayWeather: function (data) {
-//     const { lon, lat } = data.coord;
-//     const { name, visibility } = data;
-//     const { icon, description } = data.weather[0];
-//     const { temp, temp_min, temp_max, humidity, pressure } = data.main;
-//     const { speed } = data.wind;
-//     document.querySelector(".city").innerText = name;
-//     document.querySelector("#icon").src = "http://openweathermap.org/img/wn/" + icon + ".png";
-//     document.querySelector(".weather-conditions").innerHTML = description;
-//     document.querySelector(".temp").innerHTML = Math.round(temp) + "&#176 C";
-//     document.querySelector(".temp-min-max").innerHTML = Math.round(temp_min) + "&#176 C" + " / " + Math.round(temp_max) + "&#176 C";
-//     document.querySelector(".wind").innerHTML = Math.round(speed) + " Km/h";
-//     document.querySelector(".humidity").innerHTML = humidity + " %";
-//     document.querySelector(".pressure").innerHTML = pressure + " mb";
-//     document.querySelector(".visibility").innerHTML = visibility + " m";
-//     document.querySelector(".lon-lat").innerHTML = lon + "/" + lat;
-//   },
-// };
-
 let forecastWeater = {
   apiKey: "b3986ed7dbefd400d6ae3068ccccdc5d",
   fetchForecastWeater: function (city) {
@@ -82,14 +56,29 @@ let forecastWeater = {
     let date = new Date();
     const dayOfTheWeek = date.getDay();
     const resultDay2 = daysOfTheWeek[dayOfTheWeek + 1];
-    document.querySelector(".days:nth-child(2)").innerHTML = resultDay2;
+    document.querySelector(".days:nth-child(2)").innerHTML = `<p>${resultDay2}</p>
+    <img src=http://openweathermap.org/img/wn/${data.list[7].weather[0].icon}.png />
+    <p>${data.list[7].weather[0].description}</p>
+    <p>${Math.round(data.list[7].main.temp_max)}&#176 C/${Math.round(data.list[5].main.temp_min)}&#176 C</p>`;
     const resultDay3 = daysOfTheWeek[dayOfTheWeek + 2];
-    document.querySelector(".days:nth-child(3)").innerHTML = resultDay3;
+    document.querySelector(".days:nth-child(3)").innerHTML = `<p>${resultDay3}</p>
+    <img src=http://openweathermap.org/img/wn/${data.list[15].weather[0].icon}.png />
+    <p>${data.list[15].weather[0].description}</p>
+    <p>${Math.round(data.list[15].main.temp_max)}&#176 C/${Math.round(data.list[13].main.temp_min)}&#176 C</p>`;
     const resultDay4 = daysOfTheWeek[dayOfTheWeek + 3];
-    document.querySelector(".days:nth-child(4)").innerHTML = resultDay4;
+    document.querySelector(".days:nth-child(4)").innerHTML = `<p>${resultDay4}</p>
+    <img src=http://openweathermap.org/img/wn/${data.list[23].weather[0].icon}.png />
+    <p>${data.list[23].weather[0].description}</p>
+    <p>${Math.round(data.list[23].main.temp_max)}&#176 C/${Math.round(data.list[21].main.temp_min)}&#176 C</p>`;
     const resultDay5 = daysOfTheWeek[dayOfTheWeek + 4];
-    document.querySelector(".days:nth-child(5)").innerHTML = resultDay5;
+    document.querySelector(".days:nth-child(5)").innerHTML = `<p>${resultDay5}</p>
+    <img src=http://openweathermap.org/img/wn/${data.list[31].weather[0].icon}.png />
+    <p>${data.list[31].weather[0].description}</p>
+    <p>${Math.round(data.list[31].main.temp_max)}&#176 C/${Math.round(data.list[29].main.temp_min)}&#176 C</p>`;
     const resultDay6 = daysOfTheWeek[dayOfTheWeek + 5];
-    document.querySelector(".days:nth-child(6)").innerHTML = resultDay6;
+    document.querySelector(".days:nth-child(6)").innerHTML = `<p>${resultDay6}</p>
+    <img src=http://openweathermap.org/img/wn/${data.list[39].weather[0].icon}.png />
+    <p>${data.list[39].weather[0].description}</p>
+    <p>${Math.round(data.list[39].main.temp_max)}&#176 C/${Math.round(data.list[37].main.temp_min)}&#176 C</p>`;
   },
 };
