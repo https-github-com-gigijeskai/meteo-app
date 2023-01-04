@@ -45,7 +45,7 @@
     margin: 0 auto;
     padding: 1rem;
     margin-top: 1rem;
-    display: flex;
+    display: none;
     flex-wrap: wrap;
     justify-content: space-around;
 }
@@ -61,7 +61,7 @@
     margin: 0 auto;
     padding: 1rem;
     margin-top: 1rem;
-    display: flex;
+    display: none;
     justify-content: flex-start; 
     overflow-x: auto; 
 }
