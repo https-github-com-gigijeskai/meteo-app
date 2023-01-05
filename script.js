@@ -80,6 +80,7 @@ let forecastWeater = {
     <img src=http://openweathermap.org/img/wn/${data.list[39].weather[0].icon}.png />
     <p>${data.list[39].weather[0].description}</p>
     <p>${Math.round(data.list[39].main.temp_max)}&#176 C/${Math.round(data.list[37].main.temp_min)}&#176 C</p>`;
+    document.body.style.backgroundImage = "url('https://source.unsplash.com/1600x900/?sky+" + data.list[0].weather[0].main + "')";
   },
   search: function () {
     this.fetchForecastWeater(document.querySelector(".search-bar").value);
