@@ -81,18 +81,17 @@ let forecastWeater = {
     <p>${data.list[39].weather[0].description}</p>
     <p>${Math.round(data.list[39].main.temp_max)}&#176 C/${Math.round(data.list[37].main.temp_min)}&#176 C</p>`;
   },
+  search: function () {
+    this.fetchForecastWeater(document.querySelector(".search-bar").value);
+  },
 };
-search: function () {
-  this.fetchForecastWeater(document.querySelector(".search-bar").value)
-}
-document.querySelector(".search button").addEventListener("click", function () {
+document.querySelector("#search button").addEventListener("click", function () {
   forecastWeater.search();
 });
-document
-  .querySelector(".search-bar")
-  .addEventListener("keyup", function (event) {
-    if (event.key == "Enter") {
-      forecastWeather.search();
-    }
-  });
-  forecastWeather.fetchForecastWeather("Denver");
+
+document.querySelector(".search-bar").addEventListener("keyup", function (event) {
+  if (event.key == "Enter") {
+    forecastWeater.search();
+  }
+});
+forecastWeater.fetchForecastWeater("Roma");
