@@ -11,49 +11,40 @@
     justify-content: space-around;
     background-color: rgb(0 0 0 / 71%);
 }
-#weather-conditions{
+#weather-conditions {
     width: 80%;
-    border: solid 1px #000000;
     border-radius: 5px;
     margin: 0 auto;
     padding: 1rem;
     margin-top: 1rem;
     display: flex;
-    flex-direction: row;
-    align-items: center; 
-    background-color: rgb(0 0 0 / 71%);  
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: rgb(0 0 0 / 71%); 
+    color: white; 
 }
-.pillow-container-l{
-    background-color: blueviolet;
-    padding: 1rem;
-    margin-right: 0.5rem;
-}
-.pillow-container-l:last-child{
-    margin-top: 1rem;
-}
-.pillow-container-r{
-    background-color: hotpink;
-    padding: 1rem;
-    margin-left: 0.5rem;
-}
-.pillow-container-r:last-child{
-    margin-top: 1rem;
+.weather-conditions{
+    padding-top: 1rem;
 }
 #details-weather-conditions{
     width: 80%;
-    border: solid 1px #000000;
     border-radius: 5px;
     margin: 0 auto;
     padding: 1rem;
     margin-top: 1rem;
     display: none;
     flex-wrap: wrap;
-    justify-content: space-around;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: rgb(0 0 0 / 71%); 
+    color: white; 
 }
 .detail{
-    background-color: yellowgreen;
     padding: 1rem;
     margin: 0.5rem;
+}
+.detail:last-child{
+    margin: 0px -15px 0px 0px;
 }
 #forecast{
     width: 80%;
@@ -77,7 +68,7 @@ background-color: #000000;
 width: 80%;
 margin: 0 auto;
 border-radius: 5px;
-padding: 1rem;
+padding: 0px 1rem 1rem 1rem;
 background-color: rgb(0 0 0 / 71%);
 flex-direction: column;
 align-items: flex-start;

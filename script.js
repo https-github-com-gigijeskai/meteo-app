@@ -1,9 +1,11 @@
 function hamburgerMenu() {
+  let y = document.getElementById("navbar");
   let x = document.getElementById("myLinks");
   if (x.style.display === "flex") {
     x.style.display = "none";
   } else {
     x.style.display = "flex";
+    y.style.borderRadius = "5px 5px 0px 0px";
   }
 }
 function detailToggle() {
@@ -95,4 +97,4 @@ document.querySelector(".search-bar").addEventListener("keyup", function (event)
     forecastWeater.search();
   }
 });
-forecastWeater.fetchForecastWeater("Roma");
+forecastWeater.fetchForecastWeater("Milano");

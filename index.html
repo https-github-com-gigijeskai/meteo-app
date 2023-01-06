@@ -26,17 +26,22 @@
         <button onclick="detailToggle()">Dettagli meteo</button>
         <button onclick="forecastToggle()">Forecast</button>
       </div>
+
       <div id="weather-conditions">
         <div id="left-hand">
-          <div class="pillow-container-l city"></div>
-          <div class="pillow-container-l weather-conditions"></div>
+          <div class="pillow-container-l">
+            <p class="city"></p>
+          </div>
+          <div class="pillow-container-l">
+            <p class="weather-conditions"></p>
+          </div>
         </div>
-        <!-- chiusura div #left-hand -->
         <div id="rigth-hand">
-          <div class="pillow-container-r temp"></div>
           <div class="pillow-container-r"><img id="icon" src="" alt="" /></div>
+          <div class="pillow-container-r">
+            <p class="temp"></p>
+          </div>
         </div>
-        <!-- chiusura div #rigth-hand -->
       </div>
       <!-- chiusura div #weather-conditions -->
       <div id="details-weather-conditions">
