@@ -12,26 +12,23 @@ function hamburgerMenu() {
 function detailToggle() {
   let x = document.querySelector("#details-weather-conditions");
   let y = document.querySelector("#forecast");
-  if ((x.style.display === "none") | ((x.style.display === "none") & (y.requestPointerLock.display === "flex"))) {
+  if (x.style.display === "none" || y.style.display === "flex") {
     x.style.display = "flex";
     y.style.display = "none";
   } else {
     x.style.display = "none";
-    y.style.display = "none";
   }
 }
 function forecastToggle() {
   let x = document.querySelector("#forecast");
   let y = document.querySelector("#details-weather-conditions");
-  if ((x.style.display === "none") | ((x.style.display === "none") & (y.requestPointerLock.display === "flex"))) {
+  if (x.style.display === "none" || y.style.display === "flex") {
     x.style.display = "flex";
     y.style.display = "none";
   } else {
     x.style.display = "none";
-    y.style.display = "none";
   }
 }
-
 let forecastWeater = {
   apiKey: "b3986ed7dbefd400d6ae3068ccccdc5d",
   fetchForecastWeater: function (city) {
