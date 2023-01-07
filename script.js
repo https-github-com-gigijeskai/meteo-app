@@ -3,6 +3,7 @@ function hamburgerMenu() {
   let x = document.getElementById("myLinks");
   if (x.style.display === "flex") {
     x.style.display = "none";
+    y.style.borderRadius = "5px";
   } else {
     x.style.display = "flex";
     y.style.borderRadius = "5px 5px 0px 0px";
@@ -16,7 +17,7 @@ function detailToggle() {
     y.style.display = "none";
   } else {
     x.style.display = "none";
-    y.style.display = "flex";
+    y.style.display = "none";
   }
 }
 function forecastToggle() {
@@ -27,7 +28,7 @@ function forecastToggle() {
     y.style.display = "none";
   } else {
     x.style.display = "none";
-    y.style.display = "flex";
+    y.style.display = "none";
   }
 }
 
