@@ -96,3 +96,5 @@ document.querySelector(".search-bar").addEventListener("keyup", function (event)
   }
 });
 forecastWeater.fetchForecastWeater("Milano");
+document.getElementById("dettaglio").addEventListener("click", detailToggle());
+document.getElementById("prossimiGiorni").addEventListener("click", forecastToggle());
