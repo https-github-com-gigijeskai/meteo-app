@@ -13,18 +13,20 @@
   <body>
     <div id="container">
       <div id="navbar">
-        <div id="logo">Logo</div>
+        <div id="logo"><img src="./assets/logo-app-meteo.svg" alt="" /></div>
         <div id="search">
-          <input class="search-bar" type="text" placeholder="search..." />
-          <button><ion-icon name="search-outline"></ion-icon></button>
+          <input class="search-bar" type="text" placeholder="cerca..." />
+          <div>
+            <button><ion-icon name="search-outline"></ion-icon></button>
+          </div>
         </div>
         <div id="toggle-button">
           <a href="javascript:void(0);" class="icon" onclick="hamburgerMenu()"><ion-icon name="menu-outline"></ion-icon></a>
         </div>
       </div>
       <div id="myLinks">
-        <button id="dettaglio" onclick="detailToggle()">Dettagli meteo</button>
-        <button id="prossimiGiorni" onclick="forecastToggle()">Forecast</button>
+        <button class="slideInDown" id="dettaglio" onclick="detailToggle()">Dettagli meteo</button>
+        <button class="slideInDown" id="prossimiGiorni" onclick="forecastToggle()">Forecast</button>
       </div>
 
       <div id="weather-conditions">
@@ -44,40 +46,40 @@
         </div>
       </div>
       <!-- chiusura div #weather-conditions -->
-      <div id="details-weather-conditions">
-        <div class="detail">
+      <div id="details-weather-conditions" class="zoomIn">
+        <div class="detail slideInDown">
           <p>Min/Max</p>
-          <p class="temp-min-max"></p>
+          <p class="temp-min-max slideInDown"></p>
         </div>
-        <div class="detail">
+        <div class="detail slideInDown">
           <p>Vento</p>
-          <p class="wind"></p>
+          <p class="wind slideInDown"></p>
         </div>
         <div class="detail">
           <p>Umidità</p>
-          <p class="humidity"></p>
+          <p class="humidity slideInDown"></p>
         </div>
-        <div class="detail">
+        <div class="detail slideInDown">
           <p>Pressione</p>
-          <p class="pressure"></p>
+          <p class="pressure slideInDown"></p>
         </div>
-        <div class="detail">
+        <div class="detail slideInDown">
           <p>Visibilità</p>
-          <p class="visibility"></p>
+          <p class="visibility slideInDown"></p>
         </div>
-        <div class="detail">
+        <div class="detail slideInDown">
           <p>Cordinate</p>
-          <p class="lon-lat"></p>
+          <p class="lon-lat slideInDown"></p>
         </div>
       </div>
       <!-- chiusura div #details-weather-conditions -->
-      <div id="forecast">
-        <div class="days"></div>
-        <div class="days">Giorno 2</div>
-        <div class="days">Giorno 3</div>
-        <div class="days">Giorno 4</div>
-        <div class="days">Giorno 5</div>
-        <div class="days">Giorno 6</div>
+      <div id="forecast" class="zoomIn">
+        <div class="days slideInDown"></div>
+        <div class="days slideInDown">Giorno 2</div>
+        <div class="days slideInDown">Giorno 3</div>
+        <div class="days slideInDown">Giorno 4</div>
+        <div class="days slideInDown">Giorno 5</div>
+        <div class="days slideInDown">Giorno 6</div>
       </div>
       <!-- chiusura div #forecast -->
     </div>
