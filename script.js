@@ -39,7 +39,9 @@ let forecastWeater = {
   displayForecastWeater: function (data) {
     document.querySelector(".city").innerText = data.city.name;
     document.querySelector("#icon").src = "http://openweathermap.org/img/wn/" + data.list[0].weather[0].icon + ".png";
-    document.querySelector(".weather-conditions").innerHTML = data.list[0].weather[0].description;
+    let weatherCondition = data.list[0].weather[0].description;
+    let weatherConditionUppercase = weatherCondition.charAt(0).toUpperCase() + weatherCondition.slice(1);
+    document.querySelector(".weather-conditions").innerHTML = weatherConditionUppercase;
     document.querySelector(".temp").innerHTML = Math.round(data.list[0].main.temp) + "&#176 C";
     document.querySelector(".temp-min-max").innerHTML = Math.round(data.list[0].main.temp_max) + "&#176 C" + " / " + Math.round(data.list[2].main.temp_min) + "&#176 C";
     document.querySelector(".wind").innerHTML = Math.round(data.list[0].wind.speed) + " Km/h";
